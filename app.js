@@ -1,9 +1,10 @@
 // const names = require('./tutorial.js');
 // const sayHi = require('./util.js');
-// const data = require('./alternative-flavour.js');
+// const {singleperson, items} = require('./alternative-flavour.js');
 // require('./mind-grenade.js');
 // return;
-// console.log(data);
+// console.log(singleperson);
+// console.log(items);
 
 // const amount = 9;
 // if(amount < 10){
@@ -21,6 +22,8 @@
 //     console.log("Hello");
 // }, 1000);
 
+
+
 // setInterval(
     
 //     logfunction2, 1000
@@ -36,20 +39,24 @@
 
 
 // // Modules
-// // const john = 'john';
-// // const peter = 'peter';
-// // const sayHi = (name) => {
-// //     console.log(`function invoked for ${name}`);
-// // }
-
-// sayHi("test");
-// sayHi(names.john);
-// sayHi(names.peter);
+// const john = 'john';
+// const peter = 'peter';
+// const sayHi = (dummy = "") => {
+//     console.log(`function invoked for ${dummy}`);
+// }
+// const name = "kkkkk";
+// sayHi();
+// sayHi(john);
+// sayHi(peter);
 
 
 // console.log(names);
 
-// os
+// custom module 
+// const custom = require('./sample/mind-grenade');
+// custom.addValue();
+
+// module -os
 // const os = require('os');
 // const user = os.userInfo();
 // // console.log(os.uptime());
@@ -60,33 +67,36 @@
 //     freeMem : os.freemem()
 // };
 
-// // console.log(os);
+// console.log(currentOs);
 
-// // path 
+// path 
 // const path = require('path');
-// // console.log(path.sep);
-// // file path
-// const filePath = path.join('/content/', 'subfolder', 'test.txt');
-// // console.log(filePath);
-// // file base name
+// console.log(path.sep);
+// file path
+// join - concatename
+// const filePath = path.join('/content/', '/subfolder', 'test.txt');
+// console.log(filePath);
+// file base name
 // const base = path.basename(filePath);
-// // console.log(base);
-// // absolute path 
-// const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt');
-// // console.log(absolute);
+// console.log(__dirname);
+// console.log(base);
+// absolute path 
+// const absolute = path.resolve(__dirname, '/content', '/subfolder', 'test.txt');
+// console.log(absolute);
 
-// // file system (fs)
+// file system (fs) 
 // const {readFileSync, writeFileSync} = require('fs');
 // const first = readFileSync('./content/first.txt', 'utf-8');
 // const second = readFileSync('./content/second.txt', 'utf-8');
 // // console.log(first, second);
 // writeFileSync(
 //     './content/result-sync.txt', 
-//     `Here is the result : ${first} ${second}`,
+//     `Here is the result :hjsdhjhsdhsj`,
 //      {flag : 'a'}
 // );
 
-// // read file
+
+// read file
 // const {readFile, writeFile} = require('fs');
 // readFile('./content/first.txt', 'utf8', (err, result) => {
 //     if(err){
@@ -95,32 +105,32 @@
 //     }
 //     const first = result;
 // })
-//     // console.log(result);
+    // console.log(result);
     
-//     readFile('./content/second.txt', 'utf8', (err, result) => {
-//         if(err){
-//             console.log(err);
-//             return;
-//         }
-//         // console.log(result);
-//         const second = result
-//     })
+    // readFile('./content/second.txt', 'utf8', (err, result) => {
+    //     if(err){
+    //         console.log(err);
+    //         return;
+    //     }
+    //     // console.log(result);
+    //     const second = result
+    // })
 
    
-//     writeFile(
-//         './content/result-async.txt',
-//         `Here is the result : ${first}, ${second}`,
-//         (err, result) => {
-//             if(err)
-//             {
-//                 console.log(err);
-//                 return;
-//             }
-//             else{
-//                 console.log(result);
-//             }
-//         }
-//     )  
+    // writeFile(
+    //     './content/result-async.txt',
+    //     `Here is the result : ${first}, ${second}`,
+    //     (err, result) => {
+    //         if(err)
+    //         {
+    //             console.log(err);
+    //             return;
+    //         }
+    //         else{
+    //             console.log(result);
+    //         }
+    //     }
+    // )  
 
 // const http = require('http');
 // const server = http.createServer((req, res) => {
@@ -155,7 +165,39 @@
 // npm init -y (everything default)
 
 // lodash
-const _ = require('lodash');
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+// const _ = require('lodash');
+// const items = [112, [2, [3, [4]]]];
+// const newItems = _.flattenDeep(items);
+// console.log(newItems);
+
+// js is synchronous and single threaded
+// need clarity - Done
+// console.log('first task');
+// console.time();
+// for(let i =0; i<5; i++){
+//     console.log('sendond task');
+    // const h3 = document.querySelector('h3')
+    // h3.textContent =`sample text`
+// }
+// console.timeEnd();
+// console.log('End task');
+// // asynchronous function - setTimeout
+// console.log('first task')
+// setTimeout(() => {
+//     console.log('second task')
+// }, 0);
+// console.log('next task');
+//end
+
+// Files  - asyncronous
+const { readFile } = require('fs');
+console.log('started first task');
+readFile('./content/first.txt', 'utf-8', (err, result) => {
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log(result);
+    console.log('completed first task');
+})
+console.log('starting next task');

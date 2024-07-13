@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>FORM</title>
+    </head>
+    <body>
+        <form action ="/login" method="POST">
+            <h3>FORM</h3>
+            <label for ="name"> Enter Name</label>
+            <input type="text" name="name" autocomplete="false">
+            <button type="submit" class ="block">Submit</button>
+        </form>
+        <script>
+            const result = document.querySelector('.result');
+            const fetchPeople = async () => {
+                try{
+                    const {data} = await axios.get('/api/people');
+                    const people = data.data.map((person) => {
+                        return `<h5>${people.name}</h5>`;
+                    })
+                    result.innerHTML = people.join('');
+                } catch(error){
+                    result.innerHTML ="<h2> Cannot fetch data </h2>";
+                }
+            }
+            fetchPeople();
+        </script>
+    </body>
+</html>
