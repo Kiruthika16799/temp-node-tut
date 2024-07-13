@@ -1,0 +1,58 @@
+Express JS :
+===============
+
+minimal & flexible node js web app framework
+Design and develop Web application, Api's
+
+Run the command : (Earlier node version) -package.json
+===============
+npm install express --save
+ -- install latest version
+
+ HTTP Methods: 
+ ===============
+app.get  
+  GET - Read data
+app.post
+  POST - Insert Data
+app.put
+  PUT - Update Data
+app.delete
+  DELETE - Delete Data
+
+API (Application Porgramming Interface) Vs SSR (Server Side Rendering)
+
+API- JOSN
+Send Data
+res.json()
+
+SSR - Template
+Send Template
+Res.Render()
+
+Course API : 
+========
+1. https://www.course-api.com/react-tabs-project
+2. https://www.course-api.com/
+3. https://react-projects.netlify.app/
+4. https://react-vite-projects-6-tabs.netlify.app/
+
+ https://hn.algolia.com/api
+
+ Middleware in express js:
+========================
+ Middleware is the function. 
+ Execute during the request to the server
+
+Example
+=====
+ // req => middleware -> response
+// before use and apply below all the functions 
+// apply on any route
+app.use(logger);
+// apply only api
+app.use('/api', logger);
+
+Third party middel ware 
+======================
+1. morgan 
